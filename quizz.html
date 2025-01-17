@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Interactif</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #1e1e1e;
+        color: #fff;
+      }
+      #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        font-size: 14px;
+        background-color: #333;
+      }
+      #restart-button {
+        background-color: #d9534f;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      #restart-button:hover {
+        background-color: #c9302c;
+      }
+      #question-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+      .question {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .propositions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 80%;
+        justify-content: space-around;
+      }
+      .proposition {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .proposition:hover {
+        background-color: #555;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 16px;
+        font-style: italic;
+      }
+      #gif-container {
+        margin-top: 20px;
+        max-width: 500px; /* Largeur maximale */
+        width: 100%; /* S'adapte à la largeur disponible */
+        aspect-ratio: 16 / 9; /* Maintient un ratio de 16:9 */
+        overflow: hidden;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      #next-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      #next-button:hover {
+        background-color: #0056b3;
+      }
+      #footer {
+        padding: 10px;
+        text-align: center;
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <button id="restart-button">Restart</button>
+      <div id="score"></div>
+    </div>
+    <div id="question-container">
+      <div id="question" class="question"></div>
+      <div id="propositions" class="propositions"></div>
+      <div id="gif-container"></div>
+      <div id="result"></div>
+      <button id="next-button" style="display: none">
+        Appuyer ici pour la question suivante
+      </button>
+    </div>
+    <div id="footer">Quiz Interactif</div>
+
+    <script>
+      const questions = [
+        {
+          question:
+            "Quelle est l'unité de mesure utilisée pour la dose de radiothérapie ?",
+          propositions: ["Millisieverts", "Gray", "Becquerel", "Joules"],
+          reponse: "Gray",
+        },
+        {
+          question: "Quel facteur favorise la radiosensibilité des cellules ?",
+          propositions: [
+            "Présence d’hypoxie",
+            "Phase G2-M du cycle cellulaire",
+            "Haute concentration en protéines",
+            "Tissu adipeux",
+          ],
+          reponse: "Phase G2-M du cycle cellulaire",
+        },
+        {
+          question:
+            "Quelle technique de radiothérapie est utilisée pour des petites lésions avec une précision millimétrique ?",
+          propositions: [
+            "Radiothérapie 3D",
+            "Radiothérapie stéréotaxique (SBRT)",
+            "Radiothérapie conformationnelle",
+            "Radiothérapie hypofractionnée",
+          ],
+          reponse: "Radiothérapie stéréotaxique (SBRT)",
+        },
+        {
+          question:
+            "Quel est un effet secondaire spécifique des anthracyclines ?",
+          propositions: [
+            "Toxicité hépatique",
+            "Toxicité cardiaque",
+            "Neuropathie sensitive",
+            "Myalgies",
+          ],
+          reponse: "Toxicité cardiaque",
+        },
+        {
+          question:
+            "Quel fruit est connu pour inhiber le métabolisme intestinal des médicaments ?",
+          propositions: ["Banane", "Jus de pamplemousse", "Raisin", "Mangue"],
+          reponse: "Jus de pamplemousse",
+        },
+        {
+          question:
+            "Quelle technique est basée sur la dissociation et la concentration sur des souvenirs agréables pour gérer la douleur ?",
+          propositions: [
+            "Acupuncture",
+            "Hypnose",
+            "Musicothérapie",
+            "Méditation",
+          ],
+          reponse: "Hypnose",
+        },
+        {
+          question:
+            "Quel est l’effet d’un inducteur enzymatique comme la rifampicine sur un médicament ?",
+          propositions: [
+            "Réduction du métabolisme",
+            "Accélération de l’élimination",
+            "Diminution de l’absorption",
+            "Augmentation de la toxicité",
+          ],
+          reponse: "Accélération de l’élimination",
+        },
+        {
+          question:
+            "Quelle enzyme hépatique est responsable de métaboliser plus de 80 % des médicaments ?",
+          propositions: ["CYP3A4", "CYP2D6", "CYP1A2", "CYP2C19"],
+          reponse: "CYP3A4",
+        },
+        {
+          question: "Quelle est une contre-indication à la cryothérapie ?",
+          propositions: [
+            "Syndrome de Raynaud",
+            "Tension musculaire",
+            "Douleur neuropathique",
+            "Lombosciatique",
+          ],
+          reponse: "Syndrome de Raynaud",
+        },
+        {
+          question:
+            "Quelle mesure préventive réduit la toxicité rénale du cisplatine ?",
+          propositions: [
+            "Utilisation de corticoïdes",
+            "Administration de diurétiques",
+            "Réhydratation intraveineuse",
+            "Réduction de la dose de chimiothérapie",
+          ],
+          reponse: "Réhydratation intraveineuse",
+        },
+        {
+          question:
+            "Quel mécanisme rend certains composés plus toxiques après leur métabolisme hépatique ?",
+          propositions: [
+            "Production de métabolites actifs",
+            "Réduction de la biodisponibilité",
+            "Inactivation enzymatique",
+            "Élimination accrue",
+          ],
+          reponse: "Production de métabolites actifs",
+        },
+        {
+          question:
+            "Quelle est une indication courante de la radiothérapie palliative ?",
+          propositions: [
+            "Traitement néoadjuvant",
+            "Métastases osseuses",
+            "Prévention des rechutes",
+            "Traitement hormonal",
+          ],
+          reponse: "Métastases osseuses",
+        },
+        {
+          question:
+            "Quelle est une interaction typique entre le paracétamol et les anticoagulants ?",
+          propositions: [
+            "Hypotension",
+            "Augmentation du risque de saignement",
+            "Hypoglycémie",
+            "Insuffisance rénale",
+          ],
+          reponse: "Augmentation du risque de saignement",
+        },
+        {
+          question:
+            "Quel mécanisme décrit l’action des médicaments alkylants utilisés en chimiothérapie ?",
+          propositions: [
+            "Inhibition de la synthèse protéique",
+            "Formation d’adduits sur l’ADN pour perturber sa structure",
+            "Blocage des récepteurs hormonaux",
+            "Neutralisation des radicaux libres",
+          ],
+          reponse: "Formation d’adduits sur l’ADN pour perturber sa structure",
+        },
+        {
+          question:
+            "Quelle thérapie utilise un casque de réalité virtuelle pour réduire la douleur lors de soins douloureux ?",
+          propositions: [
+            "Musicothérapie",
+            "Hypnose",
+            "Réalité virtuelle",
+            "Méditation",
+          ],
+          reponse: "Réalité virtuelle",
+        },
+        {
+          question: "Quel est le rôle des cytochromes P450 dans l’organisme ?",
+          propositions: [
+            "Produire des endorphines pour soulager la douleur",
+            "Métaboliser les xénobiotiques et médicaments",
+            "Activer les lymphocytes B",
+            "Transporter les lipides",
+          ],
+          reponse: "Métaboliser les xénobiotiques et médicaments",
+        },
+        {
+          question:
+            "Quel médicament est utilisé pour prévenir la cystite hémorragique lors d'une chimiothérapie ?",
+          propositions: ["Emend", "Mesna", "Ondansetron", "Rifampicine"],
+          reponse: "Mesna",
+        },
+        {
+          question:
+            "Quel mécanisme permet aux anticorps monoclonaux de cibler les cellules tumorales ?",
+          propositions: [
+            "Blocage des récepteurs VEGF",
+            "Liaison spécifique aux récepteurs membranaires",
+            "Inhibition des enzymes intracellulaires",
+            "Réduction de la biodisponibilité",
+          ],
+          reponse: "Liaison spécifique aux récepteurs membranaires",
+        },
+        {
+          question:
+            "Quelle mesure est essentielle pour prévenir une neutropénie fébrile après une chimiothérapie ?",
+          propositions: [
+            "Administration de corticostéroïdes",
+            "Injection de G-CSF",
+            "Surveillance de la glycémie",
+            "Administration d’antibiotiques prophylactiques",
+          ],
+          reponse: "Injection de G-CSF",
+        },
+        {
+          question:
+            "Quels sont les principaux symptômes d’une intoxication aiguë au monoxyde de carbone ?",
+          propositions: [
+            "Vomissements et diarrhées",
+            "Céphalées et confusion",
+            "Hypoglycémie et hypotension",
+            "Tachycardie et myalgies",
+          ],
+          reponse: "Céphalées et confusion",
+        },
+        {
+          question:
+            "Quel est un effet secondaire courant des taxanes en chimiothérapie ?",
+          propositions: [
+            "Vasospasme coronarien",
+            "Neuropathie sensitive",
+            "Cystite hémorragique",
+            "Myélosuppression",
+          ],
+          reponse: "Neuropathie sensitive",
+        },
+        {
+          question:
+            "Quelle thérapie non médicamenteuse repose sur la libération d’endorphines pour soulager la douleur ?",
+          propositions: [
+            "Cryothérapie",
+            "TENS",
+            "Musicothérapie",
+            "Radiothérapie",
+          ],
+          reponse: "TENS",
+        },
+        {
+          question:
+            "Quelle est une contre-indication à l’utilisation de la TENS ?",
+          propositions: [
+            "Lombalgie chronique",
+            "Présence d’un stimulateur cardiaque",
+            "Allergie au latex",
+            "Douleur neuropathique",
+          ],
+          reponse: "Présence d’un stimulateur cardiaque",
+        },
+        {
+          question:
+            "Quelle technique est utilisée pour injecter de faibles doses de médicaments directement dans la peau pour soulager la douleur ?",
+          propositions: [
+            "Mésothérapie",
+            "Réflexologie",
+            "Cryothérapie",
+            "TENS",
+          ],
+          reponse: "Mésothérapie",
+        },
+        {
+          question:
+            "Quels sont les principaux bénéfices de la méditation de pleine conscience dans la gestion de la douleur ?",
+          propositions: [
+            "Réduction de l’œdème",
+            "Lutte contre le stress et amélioration de la cohérence cardiaque",
+            "Activation des fibres nerveuses",
+            "Diminution des inflammations",
+          ],
+          reponse:
+            "Lutte contre le stress et amélioration de la cohérence cardiaque",
+        },
+        {
+          question:
+            "Quelle substance est utilisée pour prévenir la neuropathie sensitive due aux taxanes ?",
+          propositions: [
+            "Gants/chaussettes froids",
+            "Injection de corticostéroïdes",
+            "Hydratation IV",
+            "Administration de diurétiques",
+          ],
+          reponse: "Gants/chaussettes froids",
+        },
+        {
+          question:
+            "Quelle technique permet de minimiser l'impact des mouvements respiratoires sur les tissus irradiés en radiothérapie ?",
+          propositions: [
+            "RCMI",
+            "Inspiration bloquée",
+            "Radiothérapie conformationnelle",
+            "Fractionnement inverse",
+          ],
+          reponse: "Inspiration bloquée",
+        },
+        {
+          question:
+            "Quel traitement est utilisé pour prévenir les nausées induites par la chimiothérapie hautement émétisante ?",
+          propositions: [
+            "Aprepitant",
+            "Mesna",
+            "Hydrocortisone",
+            "Ciprofloxacine",
+          ],
+          reponse: "Aprepitant",
+        },
+        {
+          question:
+            "Quelle hormone est ciblée dans les cancers hormonodépendants de la prostate ?",
+          propositions: [
+            "Testostérone",
+            "Oestrogène",
+            "Progestérone",
+            "Insuline",
+          ],
+          reponse: "Testostérone",
+        },
+        {
+          question:
+            "Quel est un des effets secondaires fréquents des inhibiteurs de points de contrôle immunitaires ?",
+          propositions: [
+            "Colites inflammatoires",
+            "Tachycardie",
+            "Alopécie",
+            "Hypotension",
+          ],
+          reponse: "Colites inflammatoires",
+        },
+        {
+          question:
+            "Quel est le principal risque d'une combinaison de médicaments métabolisés par CYP3A4 ?",
+          propositions: [
+            "Effet synergique",
+            "Surdosage toxique",
+            "Réduction de l’efficacité",
+            "Blocage des récepteurs",
+          ],
+          reponse: "Surdosage toxique",
+        },
+        // Continuer à générer d'autres questions jusqu'à en atteindre 100
+      ];
+
+      const goodGifs = [
+        "https://gifer.com/embed/J7Aw",
+        "https://gifer.com/embed/Aq",
+        "https://gifer.com/embed/H5z",
+        "https://gifer.com/embed/8CU",
+        "https://gifer.com/embed/kl",
+      ];
+
+      const badGifs = [
+        "https://gifer.com/embed/EkII",
+        "https://gifer.com/embed/Z2kv",
+        "https://gifer.com/embed/Aw",
+        "https://gifer.com/embed/fxU4",
+        "https://gifer.com/embed/1G2t",
+        "https://gifer.com/embed/4CYX",
+        "https://gifer.com/embed/306x",
+      ];
+
+      const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
+
+      let currentQuestionIndex = 0;
+      let goodAnswers = 0;
+      let badAnswers = 0;
+
+      const header = document.getElementById("score");
+      const restartButton = document.getElementById("restart-button");
+      const questionContainer = document.getElementById("question-container");
+      const questionElement = document.getElementById("question");
+      const propositionsContainer = document.getElementById("propositions");
+      const gifContainer = document.getElementById("gif-container");
+      const resultElement = document.getElementById("result");
+      const nextButton = document.getElementById("next-button");
+
+      const updateScore = () => {
+        header.innerHTML = `
+        <div>${currentQuestionIndex + 1}/${questions.length}</div>
+        <div>(✧◡✧) : ${goodAnswers}</div>
+        <div>(ಠ▃ಠ) : ${badAnswers}</div>
+      `;
+      };
+
+      const displayQuestion = () => {
+        const question = questions[currentQuestionIndex];
+        const shuffledPropositions = shuffleArray([...question.propositions]);
+
+        questionElement.textContent = question.question;
+        propositionsContainer.innerHTML = "";
+        gifContainer.innerHTML = ""; // Clear the previous GIF
+        shuffledPropositions.forEach((prop) => {
+          const button = document.createElement("button");
+          button.textContent = prop;
+          button.className = "proposition";
+          button.addEventListener("click", () =>
+            handleAnswer(prop, question.reponse)
+          );
+          propositionsContainer.appendChild(button);
+        });
+        resultElement.textContent = "";
+      };
+
+      const handleAnswer = (selectedAnswer, correctAnswer) => {
+        const gif = document.createElement("iframe");
+        gif.allowFullscreen = true; // Ensure the iframe behaves well
+        if (selectedAnswer === correctAnswer) {
+          resultElement.textContent = "Bonne réponse !";
+          resultElement.style.color = "lightgreen";
+          gif.src = shuffleArray(goodGifs)[0];
+          goodAnswers++;
+        } else {
+          resultElement.textContent = `Mauvaise réponse. La bonne réponse était : ${correctAnswer}`;
+          resultElement.style.color = "red";
+          gif.src = shuffleArray(badGifs)[0];
+          badAnswers++;
+        }
+        gifContainer.appendChild(gif);
+
+        currentQuestionIndex++;
+        updateScore();
+
+        // Désactiver les boutons pour éviter plusieurs clics
+        Array.from(propositionsContainer.children).forEach((button) => {
+          button.disabled = true;
+        });
+
+        nextButton.style.display = "block"; // Afficher le bouton "Suivant"
+      };
+
+      const restartQuiz = () => {
+        location.reload(); // Recharge la page pour un restart complet
+      };
+
+      nextButton.addEventListener("click", () => {
+        nextButton.style.display = "none";
+        if (currentQuestionIndex < questions.length) {
+          displayQuestion();
+        } else {
+          questionContainer.innerHTML = `
+          <div>Quiz terminé !</div>
+          <div>Bonnes réponses : ${goodAnswers}</div>
+          <div>Mauvaises réponses : ${badAnswers}</div>
+        `;
+        }
+      });
+
+      restartButton.addEventListener("click", restartQuiz);
+
+      // Initialisation
+      updateScore();
+      displayQuestion();
+    </script>
+  </body>
+</html>
