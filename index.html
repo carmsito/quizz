@@ -126,6 +126,1455 @@
 
     <script>
       const questions = [
+        // intoxication
+        {
+          question:
+            "Quelle est la principale cause d’intoxication aiguë en France ?",
+          propositions: [
+            "Psychotropes",
+            "Antalgiques",
+            "Produits domestiques",
+            "Alcool",
+          ],
+          reponse: "Psychotropes",
+        },
+        {
+          question:
+            "Quel est le taux de mortalité des intoxications par cardiotropes en réanimation ?",
+          propositions: ["1%", "5%", "10%", "15%"],
+          reponse: "15%",
+        },
+        {
+          question:
+            "Quel délai est associé à une intoxication grave par paracétamol ?",
+          propositions: [
+            "<6 heures",
+            "12-24 heures",
+            "24-72 heures",
+            ">72 heures",
+          ],
+          reponse: "24-72 heures",
+        },
+        {
+          question:
+            "Quel antidote est utilisé pour une intoxication aux opiacés ?",
+          propositions: [
+            "Naloxone",
+            "Atropine",
+            "Flumazénil",
+            "N-acétylcystéine",
+          ],
+          reponse: "Naloxone",
+        },
+        {
+          question:
+            "Quel symptôme est typique d’un syndrome anticholinergique ?",
+          propositions: ["Myosis", "Tachycardie", "Bradypnée", "Bronchorrhée"],
+          reponse: "Tachycardie",
+        },
+        {
+          question:
+            "Quel traitement est indiqué pour une intoxication par aspirine ?",
+          propositions: [
+            "Alcalinisation",
+            "Hémodialyse",
+            "Sédation",
+            "Éthanol",
+          ],
+          reponse: "Alcalinisation",
+        },
+        {
+          question:
+            "Quels sont les principaux signes d’une intoxication aux benzodiazépines ?",
+          propositions: [
+            "Coma calme, myosis",
+            "Coma calme, hypotonie",
+            "Agitation, mydriase",
+            "Convulsions, tachycardie",
+          ],
+          reponse: "Coma calme, hypotonie",
+        },
+        {
+          question:
+            "Quel syndrome est associé à une intoxication par cocaïne ?",
+          propositions: [
+            "Syndrome cholinergique",
+            "Syndrome adrénergique",
+            "Syndrome opioïde",
+            "Syndrome sérotoninergique",
+          ],
+          reponse: "Syndrome adrénergique",
+        },
+        {
+          question:
+            "Quel traitement évacuateur est préféré en cas d’intoxication aiguë ?",
+          propositions: [
+            "Charbon activé",
+            "Lavage gastrique",
+            "Émétique",
+            "Hémodialyse",
+          ],
+          reponse: "Charbon activé",
+        },
+        {
+          question:
+            "Quel délai d’apparition des symptômes est typique pour les antidépresseurs tricycliques ?",
+          propositions: ["<6 heures", "12 heures", "24 heures", "48 heures"],
+          reponse: "<6 heures",
+        },
+        {
+          question:
+            "Quelle substance peut provoquer un syndrome sérotoninergique ?",
+          propositions: ["Paracétamol", "IRSRS", "Opiacés", "Bêtabloquants"],
+          reponse: "IRSRS",
+        },
+        {
+          question: "Quel est un signe classique du syndrome cholinergique ?",
+          propositions: [
+            "Mydriase",
+            "Bronchorrhée",
+            "Tachycardie",
+            "Rétention d'urine",
+          ],
+          reponse: "Bronchorrhée",
+        },
+        {
+          question:
+            "Quelle intoxication provoque une acidose métabolique avec hypokaliémie ?",
+          propositions: ["Chloroquine", "Aspirine", "Paracétamol", "Éthanol"],
+          reponse: "Chloroquine",
+        },
+        {
+          question:
+            "Quel traitement spécifique est utilisé pour le paracétamol ?",
+          propositions: [
+            "N-acétylcystéine",
+            "Flumazénil",
+            "Fomépizole",
+            "Naloxone",
+          ],
+          reponse: "N-acétylcystéine",
+        },
+        {
+          question: "Quel toxique est responsable du syndrome muscarinique ?",
+          propositions: [
+            "Organophosphorés",
+            "Psychotropes",
+            "Antalgiques",
+            "Méthanol",
+          ],
+          reponse: "Organophosphorés",
+        },
+        {
+          question: "Quels sont les symptômes d’un syndrome opioïde ?",
+          propositions: [
+            "Coma, myosis, bradypnée",
+            "Agitation, tachycardie, mydriase",
+            "Convulsions, fièvre, tremblements",
+            "Myosis, tachycardie, confusion",
+          ],
+          reponse: "Coma, myosis, bradypnée",
+        },
+        {
+          question:
+            "Quel traitement est utilisé pour une intoxication par méthanol ?",
+          propositions: [
+            "Fomépizole",
+            "Atropine",
+            "Charbon activé",
+            "Hémodialyse",
+          ],
+          reponse: "Fomépizole",
+        },
+        {
+          question:
+            "Quel est un risque majeur de l’intoxication à la cocaïne ?",
+          propositions: [
+            "Rhabdomyolyse",
+            "Hypothermie",
+            "Myorelaxation",
+            "Bronchospasme",
+          ],
+          reponse: "Rhabdomyolyse",
+        },
+        {
+          question: "Quel toxique provoque une hépatite cytolytique grave ?",
+          propositions: ["Paracétamol", "Aspirine", "Opiacés", "Méthanol"],
+          reponse: "Paracétamol",
+        },
+        {
+          question: "Quel antidote est utilisé pour le cyanure ?",
+          propositions: [
+            "Hydroxocobalamine",
+            "N-acétylcystéine",
+            "Naloxone",
+            "Flumazénil",
+          ],
+          reponse: "Hydroxocobalamine",
+        },
+        {
+          question:
+            "Quels sont les principaux facteurs de gravité d’une intoxication ?",
+          propositions: [
+            "Quantité ingérée, terrain, délai de prise en charge",
+            "Âge, fréquence respiratoire, saturation",
+            "ECG, antécédents familiaux, dosage plasmatique",
+            "Délai ingestion, symptôme, pouls",
+          ],
+          reponse: "Quantité ingérée, terrain, délai de prise en charge",
+        },
+        {
+          question:
+            "Quel examen est systématique pour toute intoxication grave ?",
+          propositions: ["ECG", "IRM", "Scanner", "Ponction lombaire"],
+          reponse: "ECG",
+        },
+        {
+          question: "Quel toxique est associé à un coma calme et hypotonique ?",
+          propositions: [
+            "Barbituriques",
+            "Cocaïne",
+            "Antidépresseurs",
+            "Paracétamol",
+          ],
+          reponse: "Barbituriques",
+        },
+        {
+          question: "Quelle substance est un stabilisateur de membrane ?",
+          propositions: [
+            "Sels de sodium hypertoniques",
+            "Naloxone",
+            "Flumazénil",
+            "Atropine",
+          ],
+          reponse: "Sels de sodium hypertoniques",
+        },
+        {
+          question:
+            "Quel traitement est indiqué pour une alcalose respiratoire induite par aspirine ?",
+          propositions: [
+            "Alcalinisation",
+            "Hémodialyse",
+            "Sédation",
+            "Fomépizole",
+          ],
+          reponse: "Alcalinisation",
+        },
+        {
+          question:
+            "Quel toxique est le plus souvent responsable d’un syndrome adrénergique ?",
+          propositions: [
+            "Cocaïne",
+            "Opiacés",
+            "Anticholinestérasiques",
+            "Méthanol",
+          ],
+          reponse: "Cocaïne",
+        },
+        {
+          question:
+            "Quel examen est important pour détecter les complications métaboliques des intoxications ?",
+          propositions: ["Ionogramme", "IRM", "Radiographie", "Endoscopie"],
+          reponse: "Ionogramme",
+        },
+        {
+          question:
+            "Quelle complication est fréquente lors d’une intoxication prolongée ?",
+          propositions: [
+            "Rhabdomyolyse de posture",
+            "Hypotension",
+            "Hypokaliémie",
+            "Myoclonies",
+          ],
+          reponse: "Rhabdomyolyse de posture",
+        },
+        {
+          question:
+            "Quel traitement est prioritaire pour un patient avec bradypnée et myosis ?",
+          propositions: [
+            "Naloxone",
+            "Intubation",
+            "Alcalinisation",
+            "Sédation",
+          ],
+          reponse: "Naloxone",
+        },
+        {
+          question: "Quel antidote est indiqué en cas de méthémoglobinémie ?",
+          propositions: [
+            "Bleu de méthylène",
+            "Naloxone",
+            "Flumazénil",
+            "Hydroxocobalamine",
+          ],
+          reponse: "Bleu de méthylène",
+        },
+        // intoxication
+        // principe de toxicologie
+        {
+          question:
+            "Quelle est la définition d’un toxique selon la toxicologie ?",
+          propositions: [
+            "Une substance d’origine naturelle",
+            "Une substance étrangère à l’organisme vivant",
+            "Un produit chimique fabriqué industriellement",
+            "Un médicament utilisé à forte dose",
+          ],
+          reponse: "Une substance étrangère à l’organisme vivant",
+        },
+        {
+          question:
+            "Quelle est la principale différence entre pharmacologie et toxicologie ?",
+          propositions: [
+            "Optimisation de la pénétration versus optimisation de l’élimination",
+            "Étude des médicaments versus étude des poisons",
+            "Étude des effets bénéfiques versus effets indésirables",
+            "Analyse moléculaire versus analyse clinique",
+          ],
+          reponse:
+            "Optimisation de la pénétration versus optimisation de l’élimination",
+        },
+        {
+          question:
+            "Quelle est une voie courante d’entrée des toxiques dans le corps humain ?",
+          propositions: [
+            "Intramusculaire",
+            "Orale",
+            "Intra-articulaire",
+            "Sublinguale",
+          ],
+          reponse: "Orale",
+        },
+        {
+          question:
+            "Quel organe est principalement responsable du métabolisme des toxiques ?",
+          propositions: ["Rein", "Poumon", "Foie", "Cerveau"],
+          reponse: "Foie",
+        },
+        {
+          question: "Quels sont les quatre processus de la toxicocinétique ?",
+          propositions: [
+            "Absorption, distribution, métabolisme, élimination",
+            "Pénétration, circulation, interaction, détoxification",
+            "Biodisponibilité, fixation, transfert, excrétion",
+            "Dissolution, absorption, transport, filtration",
+          ],
+          reponse: "Absorption, distribution, métabolisme, élimination",
+        },
+        {
+          question: "Quel mécanisme explique une toxicité dose-dépendante ?",
+          propositions: [
+            "Accumulation dans les tissus",
+            "Saturation des enzymes métaboliques",
+            "Réaction allergique",
+            "Effet de seuil",
+          ],
+          reponse: "Saturation des enzymes métaboliques",
+        },
+        {
+          question:
+            "Quel toxique est associé à une toxicité dose-indépendante ?",
+          propositions: [
+            "Paracétamol",
+            "Aspirine",
+            "Eau de Javel",
+            "Benzodiazépines",
+          ],
+          reponse: "Aspirine",
+        },
+        {
+          question: "Quel est le rôle principal des cytochromes P450 ?",
+          propositions: [
+            "Activer les toxiques",
+            "Détoxifier les xénobiotiques",
+            "Fixer les protéines plasmatiques",
+            "Faciliter l’excrétion urinaire",
+          ],
+          reponse: "Détoxifier les xénobiotiques",
+        },
+        {
+          question:
+            "Quelle est la principale méthode d’élimination des toxiques hydrophiles ?",
+          propositions: [
+            "Élimination pulmonaire",
+            "Élimination biliaire",
+            "Élimination urinaire",
+            "Élimination cutanée",
+          ],
+          reponse: "Élimination urinaire",
+        },
+        {
+          question: "Quel paramètre détermine la distribution d’un toxique ?",
+          propositions: [
+            "La biodisponibilité",
+            "La fixation protéique plasmatique",
+            "La solubilité lipidique",
+            "Le pH du plasma",
+          ],
+          reponse: "La fixation protéique plasmatique",
+        },
+        {
+          question: "Quel syndrome est lié à une exposition aux opiacés ?",
+          propositions: [
+            "Coma avec myosis et bradypnée",
+            "Tachycardie et tremblements",
+            "Convulsions et mydriase",
+            "Acidose métabolique sévère",
+          ],
+          reponse: "Coma avec myosis et bradypnée",
+        },
+        {
+          question:
+            "Quelle est une contre-indication à l’utilisation du lavage gastrique ?",
+          propositions: [
+            "Ingestion d’alcool",
+            "Troubles de la conscience",
+            "Ingestion de paracétamol",
+            "Syndrome sérotoninergique",
+          ],
+          reponse: "Troubles de la conscience",
+        },
+        {
+          question:
+            "Quel type de toxicité est lié à une accumulation hépatique du NAPQI ?",
+          propositions: [
+            "Hépatotoxicité",
+            "Neurotoxicité",
+            "Cardiotoxicité",
+            "Néphrotoxicité",
+          ],
+          reponse: "Hépatotoxicité",
+        },
+        {
+          question:
+            "Quelle est la fonction principale des centres antipoison et de toxicovigilance ?",
+          propositions: [
+            "Traiter directement les intoxications graves",
+            "Fournir des conseils en cas d’intoxication",
+            "Analyser les toxicités des nouveaux médicaments",
+            "Effectuer des tests de dépistage toxicologiques",
+          ],
+          reponse: "Fournir des conseils en cas d’intoxication",
+        },
+        {
+          question:
+            "Quel est un effet secondaire fréquent de la méthémoglobine ?",
+          propositions: [
+            "Hypoxie tissulaire",
+            "Tachycardie",
+            "Convulsions",
+            "Acidose lactique",
+          ],
+          reponse: "Hypoxie tissulaire",
+        },
+        {
+          question:
+            "Quelle est la durée typique pour détecter des signes toxiques après ingestion de psychotropes ?",
+          propositions: [
+            "<6 heures",
+            "12-24 heures",
+            "24-48 heures",
+            ">48 heures",
+          ],
+          reponse: "<6 heures",
+        },
+        {
+          question:
+            "Quel traitement est utilisé pour accélérer l’élimination des toxiques ?",
+          propositions: [
+            "Hémodialyse",
+            "Charbon activé",
+            "Flumazénil",
+            "Bicarbonate de sodium",
+          ],
+          reponse: "Hémodialyse",
+        },
+        {
+          question:
+            "Quel facteur augmente la toxicité des composés lipophiles ?",
+          propositions: [
+            "L’absorption intestinale",
+            "La solubilité dans les graisses",
+            "La fixation hépatique",
+            "Le métabolisme pulmonaire",
+          ],
+          reponse: "La solubilité dans les graisses",
+        },
+        {
+          question: "Quel est un symptôme d’une intoxication au méthanol ?",
+          propositions: [
+            "Acidose métabolique",
+            "Mydriase",
+            "Hyperthermie",
+            "Rhabdomyolyse",
+          ],
+          reponse: "Acidose métabolique",
+        },
+        {
+          question:
+            "Quel traitement épurateur est souvent utilisé pour les intoxications à l’aspirine ?",
+          propositions: [
+            "Alcalinisation des urines",
+            "Charbon activé",
+            "Hémodialyse",
+            "Fomépizole",
+          ],
+          reponse: "Alcalinisation des urines",
+        },
+        {
+          question:
+            "Quelle méthode est utilisée pour identifier un toxique dans un laboratoire ?",
+          propositions: [
+            "Électrophorèse",
+            "Radiographie",
+            "Échographie",
+            "Hémodialyse",
+          ],
+          reponse: "Électrophorèse",
+        },
+        {
+          question:
+            "Quel organe est principalement affecté par une intoxication au paracétamol ?",
+          propositions: ["Foie", "Rein", "Poumon", "Cœur"],
+          reponse: "Foie",
+        },
+        {
+          question:
+            "Quelle substance est utilisée comme antidote pour les intoxications aux opiacés ?",
+          propositions: [
+            "Naloxone",
+            "Atropine",
+            "Charbon activé",
+            "Flumazénil",
+          ],
+          reponse: "Naloxone",
+        },
+        {
+          question:
+            "Quel est le symptôme principal d'une intoxication au méthanol ?",
+          propositions: [
+            "Acidose métabolique",
+            "Hyperthermie",
+            "Tachycardie",
+            "Hypertension",
+          ],
+          reponse: "Acidose métabolique",
+        },
+        {
+          question: "Quel toxique provoque un syndrome adrénergique ?",
+          propositions: ["Cocaïne", "Paracétamol", "Opiacés", "Méthanol"],
+          reponse: "Cocaïne",
+        },
+        {
+          question: "Quel est l'effet toxique du cyanure sur le corps humain ?",
+          propositions: [
+            "Inhibition de la respiration cellulaire",
+            "Acidose lactique",
+            "Convulsions",
+            "Hypotension sévère",
+          ],
+          reponse: "Inhibition de la respiration cellulaire",
+        },
+        {
+          question:
+            "Quelle est la principale voie d'élimination des toxiques hydrophiles ?",
+          propositions: ["Urinaire", "Biliaire", "Pulmonaire", "Cutanée"],
+          reponse: "Urinaire",
+        },
+        {
+          question:
+            "Quel traitement est utilisé pour une intoxication grave au paracétamol ?",
+          propositions: [
+            "N-acétylcystéine",
+            "Hémodialyse",
+            "Charbon activé",
+            "Flumazénil",
+          ],
+          reponse: "N-acétylcystéine",
+        },
+        {
+          question: "Quel signe clinique est typique d’un syndrome opioïde ?",
+          propositions: ["Myosis", "Mydriase", "Tachycardie", "Convulsions"],
+          reponse: "Myosis",
+        },
+        {
+          question: "Quel mécanisme est responsable de la toxicité du NAPQI ?",
+          propositions: [
+            "Formation de liaisons covalentes avec les protéines hépatiques",
+            "Accumulation dans les reins",
+            "Blocage des récepteurs neuronaux",
+            "Destruction des globules rouges",
+          ],
+          reponse:
+            "Formation de liaisons covalentes avec les protéines hépatiques",
+        },
+        // principe de toxicologie
+        // Circuit du médicament, règles d’administration, réglementation et stupéfiants
+        {
+          question: "Quelles sont les phases du circuit du médicament ?",
+          propositions: [
+            "Prescription, dispensation, administration, suivi",
+            "Analyse, fabrication, distribution, administration",
+            "Stockage, distribution, utilisation, évaluation",
+            "Validation, fabrication, administration, archivage",
+          ],
+          reponse: "Prescription, dispensation, administration, suivi",
+        },
+        {
+          question:
+            "Quel est le rôle principal du prescripteur dans le circuit du médicament ?",
+          propositions: [
+            "Administrer les médicaments",
+            "Vérifier les stocks",
+            "Évaluer la tolérance et l’efficacité du traitement",
+            "Contrôler la traçabilité des produits",
+          ],
+          reponse: "Évaluer la tolérance et l’efficacité du traitement",
+        },
+        {
+          question:
+            "Quel professionnel est chargé de valider une prescription et de délivrer les médicaments ?",
+          propositions: ["Pharmacien", "Médecin", "IDE", "Patient"],
+          reponse: "Pharmacien",
+        },
+        {
+          question: "Quels sont les objectifs des règles d’administration ?",
+          propositions: [
+            "Éviter les interactions médicamenteuses",
+            "Garantir la qualité et la sécurité de l’administration",
+            "Maximiser la vitesse d’action des médicaments",
+            "Réduire le coût des traitements",
+          ],
+          reponse: "Garantir la qualité et la sécurité de l’administration",
+        },
+        {
+          question:
+            "Quelle vérification est essentielle avant l’administration d’un médicament ?",
+          propositions: [
+            "Compatibilité avec d’autres médicaments",
+            "Identité du patient au regard de la prescription médicale",
+            "Durée totale du traitement",
+            "Disponibilité des équipements médicaux",
+          ],
+          reponse: "Identité du patient au regard de la prescription médicale",
+        },
+        {
+          question:
+            "Quelles sont les voies d’administration les plus courantes ?",
+          propositions: [
+            "Orale et parentérale",
+            "Transdermique et sublinguale",
+            "Auriculaire et pulmonaire",
+            "Rectale et vaginale",
+          ],
+          reponse: "Orale et parentérale",
+        },
+        {
+          question:
+            "Quels effets peuvent résulter d’incompatibilités physicochimiques des médicaments ?",
+          propositions: [
+            "Amélioration de l’efficacité thérapeutique",
+            "Formation de précipités ou toxicité accrue",
+            "Allongement de la durée de conservation",
+            "Réduction des coûts de production",
+          ],
+          reponse: "Formation de précipités ou toxicité accrue",
+        },
+        {
+          question:
+            "Quel est le pH standard du solvant NaCl 0,9% utilisé pour les injections ?",
+          propositions: ["5-5,5", "6-6,5", "7-7,5", "8-8,5"],
+          reponse: "7-7,5",
+        },
+        {
+          question:
+            "Quelles informations sont obligatoires sur une ordonnance médicale ?",
+          propositions: [
+            "Nom du pharmacien et type de médicament",
+            "Nom du patient, DCI, posologie, durée du traitement",
+            "Numéro RPPS et méthode d’administration",
+            "Adresse du médecin et poids du patient",
+          ],
+          reponse: "Nom du patient, DCI, posologie, durée du traitement",
+        },
+        {
+          question:
+            "Quels professionnels peuvent prescrire des traitements nicotiniques de substitution ?",
+          propositions: [
+            "IDE",
+            "Pharmaciens",
+            "Pédicures-podologues",
+            "Chirurgiens-dentistes",
+          ],
+          reponse: "IDE",
+        },
+        {
+          question:
+            "Quel est un exemple de médicament nécessitant une ordonnance sécurisée ?",
+          propositions: [
+            "Ibuprofène",
+            "Méthadone",
+            "Amoxicilline",
+            "Paracétamol",
+          ],
+          reponse: "Méthadone",
+        },
+        {
+          question:
+            "Dans quel délai une ordonnance de stupéfiants doit-elle être exécutée ?",
+          propositions: ["24 heures", "3 jours", "7 jours", "10 jours"],
+          reponse: "3 jours",
+        },
+        {
+          question:
+            "Quelle est une conséquence possible de la co-administration de médicaments incompatibles ?",
+          propositions: [
+            "Diminution de l’efficacité thérapeutique",
+            "Réduction des effets secondaires",
+            "Amélioration de la solubilité",
+            "Allongement de la demi-vie plasmatique",
+          ],
+          reponse: "Diminution de l’efficacité thérapeutique",
+        },
+        {
+          question:
+            "Quelle est la règle des 5B dans l’administration des médicaments ?",
+          propositions: [
+            "Bon patient, bon médicament, bonne dose, bonne voie, bon moment",
+            "Bonne posologie, bonne compatibilité, bonne durée, bon patient, bon stockage",
+            "Bon médecin, bon dosage, bon patient, bonne fréquence, bon suivi",
+            "Bon pharmacien, bon stockage, bonne fabrication, bon suivi, bonne distribution",
+          ],
+          reponse:
+            "Bon patient, bon médicament, bonne dose, bonne voie, bon moment",
+        },
+        {
+          question: "Quel est le rôle principal d’un pharmacien hospitalier ?",
+          propositions: [
+            "Surveiller les réactions allergiques",
+            "Analyser et valider les prescriptions médicales",
+            "Administrer les médicaments aux patients",
+            "Rédiger les ordonnances pour les médecins",
+          ],
+          reponse: "Analyser et valider les prescriptions médicales",
+        },
+        {
+          question:
+            "Quelles conditions s’appliquent à la prescription des médicaments à PIH (Prescription Initiale Hospitalière) ?",
+          propositions: [
+            "Prescription initiale et renouvellement à l’hôpital uniquement",
+            "Prescription initiale à l’hôpital et renouvellement en ville possible",
+            "Prescription et administration à l’hôpital uniquement",
+            "Prescription initiale et renouvellement par un spécialiste uniquement",
+          ],
+          reponse:
+            "Prescription initiale à l’hôpital et renouvellement en ville possible",
+        },
+        {
+          question:
+            "Quel document est requis pour un patient en ALD (Affection Longue Durée) ?",
+          propositions: [
+            "Ordonnance sécurisée",
+            "Ordonnance classique",
+            "Ordonnance bizone",
+            "Ordonnance hospitalière",
+          ],
+          reponse: "Ordonnance bizone",
+        },
+        {
+          question:
+            "Quelle catégorie de médicaments nécessite une surveillance particulière (SP) ?",
+          propositions: [
+            "Vaccins",
+            "Médicaments anticancéreux",
+            "Médicaments non remboursables",
+            "Médicaments génériques",
+          ],
+          reponse: "Médicaments anticancéreux",
+        },
+        {
+          question:
+            "Quel est le rôle de l’IDE après l’administration d’un médicament ?",
+          propositions: [
+            "Modifier la prescription si nécessaire",
+            "Ranger le médicament dans les stocks",
+            "Enregistrer la dose et l’heure d’administration",
+            "Préparer les doses pour le lendemain",
+          ],
+          reponse: "Enregistrer la dose et l’heure d’administration",
+        },
+        {
+          question:
+            "Quel médicament nécessite un fractionnement automatique de la délivrance ?",
+          propositions: [
+            "Subutex",
+            "Ibuprofène",
+            "Amoxicilline",
+            "Paracétamol",
+          ],
+          reponse: "Subutex",
+        },
+        {
+          question:
+            "Quel professionnel peut renouveler une prescription de contraceptifs oraux ?",
+          propositions: [
+            "IDE",
+            "Médecin généraliste",
+            "Pharmacien",
+            "Sage-femme",
+          ],
+          reponse: "Pharmacien",
+        },
+        {
+          question:
+            "Quels sont les risques liés à une vitesse d’administration incorrecte par voie IV ?",
+          propositions: [
+            "Réduction de la durée d’action",
+            "Augmentation de l’efficacité thérapeutique",
+            "Effets indésirables et toxicité",
+            "Stabilisation de la pharmacocinétique",
+          ],
+          reponse: "Effets indésirables et toxicité",
+        },
+        {
+          question:
+            "Quelle précaution est essentielle pour les médicaments injectables incompatibles ?",
+          propositions: [
+            "Respecter la température de conservation",
+            "Utiliser des seringues séparées ou des lignes dédiées",
+            "Diluer les médicaments dans la même solution",
+            "Augmenter la vitesse d’administration",
+          ],
+          reponse: "Utiliser des seringues séparées ou des lignes dédiées",
+        },
+        {
+          question: "Quel est le rôle principal d’une ordonnance sécurisée ?",
+          propositions: [
+            "Réduire le risque de falsification",
+            "Faciliter la prise en charge en ville",
+            "Standardiser les médicaments administrés",
+            "Permettre un remboursement automatique",
+          ],
+          reponse: "Réduire le risque de falsification",
+        },
+        {
+          question:
+            "Quel est l’objectif principal de la traçabilité des médicaments ?",
+          propositions: [
+            "Améliorer l’efficacité thérapeutique",
+            "Faciliter les audits pharmaceutiques",
+            "Garantir la sécurité des patients",
+            "Réduire les coûts des traitements",
+          ],
+          reponse: "Garantir la sécurité des patients",
+        },
+        // Circuit du médicament, règles d’administration, réglementation et stupéfiants
+        // Dispositifs médicaux
+        {
+          question: "Quelle est la définition d'un dispositif médical (DM) ?",
+          propositions: [
+            "Un médicament utilisé à faible dose",
+            "Un appareil ou instrument destiné à un usage médical, sans action pharmacologique principale",
+            "Un outil de diagnostic exclusivement biologique",
+            "Une substance active administrée par voie intraveineuse",
+          ],
+          reponse:
+            "Un appareil ou instrument destiné à un usage médical, sans action pharmacologique principale",
+        },
+        {
+          question: "Quel est un exemple de dispositif médical actif ?",
+          propositions: [
+            "Un pansement",
+            "Une sonde de défibrillation cardiaque",
+            "Une prothèse de hanche",
+            "Un cathéter",
+          ],
+          reponse: "Une sonde de défibrillation cardiaque",
+        },
+        {
+          question:
+            "Quelles sont les 4 classes de classification des DM selon leur niveau de risque ?",
+          propositions: [
+            "Classes A, B, C, D",
+            "Classes I, IIa, IIb, III",
+            "Classes 1, 2, 3, 4",
+            "Classes Basique, Moyen, Avancé, Critique",
+          ],
+          reponse: "Classes I, IIa, IIb, III",
+        },
+        {
+          question: "Quel est le rôle principal du marquage CE sur un DM ?",
+          propositions: [
+            "Indiquer le fabricant du produit",
+            "Garantir la conformité aux normes européennes",
+            "Assurer la traçabilité des dispositifs",
+            "Autoriser le remboursement du produit",
+          ],
+          reponse: "Garantir la conformité aux normes européennes",
+        },
+        {
+          question: "Quelle est la finalité de la matériovigilance ?",
+          propositions: [
+            "Promouvoir les ventes des DM",
+            "Surveiller les incidents ou risques d'incidents liés aux DM",
+            "Réduire les coûts de fabrication des DM",
+            "Simplifier les processus de certification",
+          ],
+          reponse:
+            "Surveiller les incidents ou risques d'incidents liés aux DM",
+        },
+        {
+          question:
+            "Qu'est-ce que le système IUD introduit par le règlement européen 2017/745 ?",
+          propositions: [
+            "Un code unique pour identifier les dispositifs médicaux",
+            "Une norme de fabrication des DM implantables",
+            "Un organisme de certification pour les DM",
+            "Un protocole de remboursement des DM",
+          ],
+          reponse: "Un code unique pour identifier les dispositifs médicaux",
+        },
+        {
+          question:
+            "Quels dispositifs sont soumis à une traçabilité sanitaire obligatoire ?",
+          propositions: [
+            "Tous les dispositifs non stériles",
+            "Les dispositifs médicaux implantables (DMI)",
+            "Les médicaments associés aux DM",
+            "Les DM de classe I uniquement",
+          ],
+          reponse: "Les dispositifs médicaux implantables (DMI)",
+        },
+        {
+          question:
+            "Quels sont les acteurs principaux de la matériovigilance ?",
+          propositions: [
+            "Les patients uniquement",
+            "Les fabricants, distributeurs et professionnels de santé",
+            "Les laboratoires pharmaceutiques",
+            "Les autorités judiciaires",
+          ],
+          reponse: "Les fabricants, distributeurs et professionnels de santé",
+        },
+        {
+          question:
+            "Quelle unité est utilisée pour mesurer le diamètre des cathéters ?",
+          propositions: ["Inch", "Gauge", "Centimètre", "Millimètre"],
+          reponse: "Gauge",
+        },
+        {
+          question: "Quel organisme gère la plateforme européenne EUDAMED ?",
+          propositions: ["HAS", "ANSM", "Commission européenne", "OMS"],
+          reponse: "Commission européenne",
+        },
+        {
+          question: "Qu'est-ce que le marquage CE garantit ?",
+          propositions: [
+            "La conformité aux exigences essentielles de sécurité et de performance",
+            "Un remboursement automatique par les assurances maladie",
+            "Une certification unique valable à vie",
+            "La réduction des coûts de production",
+          ],
+          reponse:
+            "La conformité aux exigences essentielles de sécurité et de performance",
+        },
+        {
+          question:
+            "Quels DM sont concernés par les essais cliniques obligatoires ?",
+          propositions: [
+            "Tous les DM de classe I",
+            "Les DM de classe III et les DMI",
+            "Les DM stériles uniquement",
+            "Tous les DM vendus en Europe",
+          ],
+          reponse: "Les DM de classe III et les DMI",
+        },
+        {
+          question: "Quel pictogramme doit figurer sur les DM réutilisables ?",
+          propositions: [
+            "Code à barres ou datamatrix",
+            "Symbole de tri sélectif",
+            "Logo de l'OMS",
+            "Icône de recyclage",
+          ],
+          reponse: "Code à barres ou datamatrix",
+        },
+        {
+          question:
+            "Quel est l'objectif principal des règles de traçabilité des DM ?",
+          propositions: [
+            "Garantir un usage sécurisé et prévenir les incidents",
+            "Réduire les coûts de production et de distribution",
+            "Assurer le stockage dans les pharmacies",
+            "Faciliter la publicité et la commercialisation",
+          ],
+          reponse: "Garantir un usage sécurisé et prévenir les incidents",
+        },
+        {
+          question:
+            "Quelle commission gère la politique des DM stériles à l'hôpital ?",
+          propositions: ["CME", "COMEDIMS", "HAS", "CEPS"],
+          reponse: "COMEDIMS",
+        },
+        {
+          question: "Quels produits sont considérés comme des DM numériques ?",
+          propositions: [
+            "Logiciels d'aide à la prescription",
+            "Systèmes de perfusion",
+            "Prothèses orthopédiques",
+            "Compresses stériles",
+          ],
+          reponse: "Logiciels d'aide à la prescription",
+        },
+        {
+          question:
+            "Quels acteurs participent à la prise en charge des DM à domicile ?",
+          propositions: [
+            "Prestataires de service et distributeurs de matériel médical",
+            "Infirmiers libéraux uniquement",
+            "Laboratoires pharmaceutiques",
+            "Autorités judiciaires",
+          ],
+          reponse:
+            "Prestataires de service et distributeurs de matériel médical",
+        },
+        {
+          question:
+            "Quel type de DM nécessite un dépôt temporaire ou permanent à l'hôpital ?",
+          propositions: [
+            "DM intégrés aux GHS",
+            "DM stériles",
+            "DMI",
+            "DM numériques",
+          ],
+          reponse: "DMI",
+        },
+        {
+          question: "Quel rôle joue la base de données EUDAMED ?",
+          propositions: [
+            "Assurer le financement des DM",
+            "Traiter les signalements d'incidents et gérer les données de traçabilité",
+            "Évaluer les prix des DM sur le marché",
+            "Créer une nomenclature unique pour les DM",
+          ],
+          reponse:
+            "Traiter les signalements d'incidents et gérer les données de traçabilité",
+        },
+        {
+          question:
+            "Quelle règle est appliquée avant la mise sur le marché d'un DM en Europe ?",
+          propositions: [
+            "Obtention du marquage CE",
+            "Certification par un organisme judiciaire",
+            "Validation par l'OMS",
+            "Approbation par les patients",
+          ],
+          reponse: "Obtention du marquage CE",
+        },
+        {
+          question:
+            "Quelle est la durée maximale de validité d'un marquage CE ?",
+          propositions: ["3 ans", "5 ans", "7 ans", "10 ans"],
+          reponse: "5 ans",
+        },
+        {
+          question:
+            "Quelle procédure est suivie en cas d'incident grave lié à un DM ?",
+          propositions: [
+            "Retrait de lot et notification à l'ANSM",
+            "Augmentation de la production pour éviter les ruptures",
+            "Changement de fabricant immédiat",
+            "Suspension des activités commerciales dans toute l'Europe",
+          ],
+          reponse: "Retrait de lot et notification à l'ANSM",
+        },
+        {
+          question:
+            "Quel organisme supervise la matériovigilance au niveau européen ?",
+          propositions: ["OMS", "HAS", "ANSM", "Commission européenne"],
+          reponse: "Commission européenne",
+        },
+        {
+          question: "Quelle est une caractéristique des DM stériles ?",
+          propositions: [
+            "Disponibles uniquement en vente libre",
+            "Fabriqués selon des normes pharmaceutiques strictes",
+            "Non soumis à des essais cliniques",
+            "Fabriqués en grande majorité en dehors de l'Europe",
+          ],
+          reponse: "Fabriqués selon des normes pharmaceutiques strictes",
+        },
+        // Dispositifs médicaux
+        // Essais thérapeutiques
+        {
+          question:
+            "Quel est le prérequis éthique pour réaliser un essai thérapeutique ?",
+          propositions: [
+            "Obtenir un financement suffisant",
+            "Être en situation d'incertitude sur une thérapeutique donnée",
+            "Disposer de participants sains uniquement",
+            "Avoir l'accord de l'OMS",
+          ],
+          reponse:
+            "Être en situation d'incertitude sur une thérapeutique donnée",
+        },
+        {
+          question:
+            "Quels sont les objectifs de la phase III d'un essai clinique ?",
+          propositions: [
+            "Déterminer la dose optimale",
+            "Étudier l'efficacité et la tolérance sur un grand échantillon",
+            "Étudier les effets à long terme en vie réelle",
+            "Fixer le prix de commercialisation",
+          ],
+          reponse:
+            "Étudier l'efficacité et la tolérance sur un grand échantillon",
+        },
+        {
+          question:
+            "Quel principe méthodologique est essentiel pour éliminer la subjectivité dans les essais cliniques ?",
+          propositions: [
+            "La randomisation",
+            "L'utilisation de placebos",
+            "Le double-aveugle",
+            "L'étude multicentrique",
+          ],
+          reponse: "Le double-aveugle",
+        },
+        {
+          question: "Quelle est la finalité d'un essai comparatif contrôlé ?",
+          propositions: [
+            "Évaluer l'effet placebo",
+            "Comparer un traitement avec un placebo ou une référence",
+            "Recruter des patients pour un essai futur",
+            "Analyser les coûts liés à un traitement",
+          ],
+          reponse: "Comparer un traitement avec un placebo ou une référence",
+        },
+        {
+          question: "Quel rôle joue le promoteur dans un essai clinique ?",
+          propositions: [
+            "Réaliser les prélèvements biologiques",
+            "Financer et gérer la recherche",
+            "Informer directement les patients participants",
+            "Surveiller les événements indésirables",
+          ],
+          reponse: "Financer et gérer la recherche",
+        },
+        {
+          question:
+            "Dans quel type de recherche le scanner sans produit de contraste est-il inclus ?",
+          propositions: [
+            "Recherche interventionnelle avec faible intervention",
+            "Recherche interventionnelle à risque minime",
+            "Recherche non interventionnelle",
+            "Recherche interventionnelle standard",
+          ],
+          reponse: "Recherche interventionnelle à risque minime",
+        },
+        {
+          question: "Quelle est la définition de l'effet placebo ?",
+          propositions: [
+            "Une réponse biologique positive due à un traitement pharmacologique",
+            "Un résultat psycho-physiologique positif sans efficacité intrinsèque attendue",
+            "Un effet secondaire d'un médicament actif",
+            "Une amélioration due à un biais méthodologique",
+          ],
+          reponse:
+            "Un résultat psycho-physiologique positif sans efficacité intrinsèque attendue",
+        },
+        {
+          question:
+            "Que signifie l'acronyme AMM dans le cadre des essais cliniques ?",
+          propositions: [
+            "Autorisation de Mise sur le Marché",
+            "Analyse Médicale Multicentrique",
+            "Autorisation Médicale des Médicaments",
+            "Arrêté Ministériel Médical",
+          ],
+          reponse: "Autorisation de Mise sur le Marché",
+        },
+        {
+          question:
+            "Quelle est la durée typique de la phase IV d'un essai clinique ?",
+          propositions: [
+            "Quelques mois",
+            "1 à 2 ans",
+            "À long terme",
+            "Indéfinie",
+          ],
+          reponse: "À long terme",
+        },
+        {
+          question:
+            "Quel document contient les détails du protocole d'une recherche clinique ?",
+          propositions: [
+            "Le formulaire de consentement",
+            "La note d'information",
+            "Le cahier d'observation",
+            "Le protocole de recherche",
+          ],
+          reponse: "Le protocole de recherche",
+        },
+        {
+          question:
+            "Quel principe garantit la comparabilité des groupes dans un essai clinique ?",
+          propositions: [
+            "Le recrutement multicentrique",
+            "L'utilisation de placebos",
+            "La randomisation",
+            "Le suivi longitudinal",
+          ],
+          reponse: "La randomisation",
+        },
+        {
+          question:
+            "Qui est responsable d'informer les patients dans une recherche clinique ?",
+          propositions: [
+            "L'ANSM",
+            "Le promoteur",
+            "L'investigateur principal ou un membre délégué de son équipe",
+            "Le technicien d'étude clinique",
+          ],
+          reponse:
+            "L'investigateur principal ou un membre délégué de son équipe",
+        },
+        {
+          question:
+            "Quel type de consentement est requis pour participer à une recherche clinique ?",
+          propositions: [
+            "Consentement tacite",
+            "Consentement oral",
+            "Consentement libre, informé, écrit",
+            "Consentement obligatoire",
+          ],
+          reponse: "Consentement libre, informé, écrit",
+        },
+        {
+          question: "Quel rôle joue l'effet placebo dans un essai clinique ?",
+          propositions: [
+            "Il réduit les coûts des essais",
+            "Il améliore la communication entre médecin et patient",
+            "Il sert de référence pour mesurer l'effet du traitement étudié",
+            "Il augmente la subjectivité des résultats",
+          ],
+          reponse:
+            "Il sert de référence pour mesurer l'effet du traitement étudié",
+        },
+        {
+          question: "Quel est un exemple d'étude non interventionnelle ?",
+          propositions: [
+            "Cohorte de suivi de la tolérance d'un traitement prescrit",
+            "Comparaison de deux médicaments",
+            "Essai sur une nouvelle technique chirurgicale",
+            "Recherche sur un traitement de cancer avancé",
+          ],
+          reponse: "Cohorte de suivi de la tolérance d'un traitement prescrit",
+        },
+        {
+          question:
+            "Quelle phase est appelée étude pivot dans le développement d'un médicament ?",
+          propositions: ["Phase I", "Phase II", "Phase III", "Phase IV"],
+          reponse: "Phase III",
+        },
+        {
+          question:
+            "Quel est un des objectifs de la phase I dans un essai clinique ?",
+          propositions: [
+            "Tester l'efficacité",
+            "Évaluer la dose maximale tolérée",
+            "Étudier les effets à long terme",
+            "Comparer deux traitements",
+          ],
+          reponse: "Évaluer la dose maximale tolérée",
+        },
+        {
+          question:
+            "Quel est le rôle d'un investigateur dans un essai multicentrique ?",
+          propositions: [
+            "Financer l'essai",
+            "Superviser la recherche dans un centre",
+            "Fixer le protocole de recherche",
+            "Analyser les données finales",
+          ],
+          reponse: "Superviser la recherche dans un centre",
+        },
+        {
+          question:
+            "Quel type de recherche est considéré comme interventionnelle avec faible intervention ?",
+          propositions: [
+            "Une étude comparative entre deux anticorps monoclonaux",
+            "Un essai sur une nouvelle technique chirurgicale",
+            "Une étude sur la tolérance des biothérapies",
+            "Un scanner sans produit de contraste ajouté",
+          ],
+          reponse: "Une étude comparative entre deux anticorps monoclonaux",
+        },
+        {
+          question:
+            "Quel est l'objectif principal des Bonnes Pratiques Cliniques (BPC) ?",
+          propositions: [
+            "Réduire les coûts de recherche",
+            "Garantir la sécurité et les droits des participants",
+            "Accélérer l'approbation des médicaments",
+            "Améliorer la collaboration entre promoteurs",
+          ],
+          reponse: "Garantir la sécurité et les droits des participants",
+        },
+        // Essais thérapeutiques
+        // Exercice infirmier, pratique avancée
+        {
+          question:
+            "Depuis quelle année les infirmiers peuvent-ils prescrire certains dispositifs médicaux ?",
+          propositions: ["2010", "2012", "2015", "2019"],
+          reponse: "2012",
+        },
+        {
+          question:
+            "Quels dispositifs médicaux peuvent être prescrits par un infirmier ?",
+          propositions: [
+            "Prothèses auditives",
+            "Matelas anti-escarres, sondes naso-gastriques, pansements spécifiques",
+            "Médicaments anti-inflammatoires",
+            "Immunoglobulines injectables",
+          ],
+          reponse:
+            "Matelas anti-escarres, sondes naso-gastriques, pansements spécifiques",
+        },
+        {
+          question:
+            "Quel type d'ordonnance doit être utilisée pour prescrire des stupéfiants ?",
+          propositions: [
+            "Ordonnance normale",
+            "Ordonnance sécurisée",
+            "Ordonnance bizone",
+            "Ordonnance hospitalière",
+          ],
+          reponse: "Ordonnance sécurisée",
+        },
+        {
+          question:
+            "Quelle est la durée maximale de renouvellement des contraceptifs oraux par un infirmier ?",
+          propositions: ["3 mois", "6 mois", "9 mois", "12 mois"],
+          reponse: "6 mois",
+        },
+        {
+          question:
+            "Quels vaccins les infirmiers peuvent-ils prescrire et administrer ?",
+          propositions: [
+            "Tous les vaccins, y compris les vaccins vivants atténués",
+            "Vaccins du calendrier vaccinal pour les personnes âgées de 11 ans et plus, sauf certains vaccins vivants atténués",
+            "Vaccins pour les enfants de moins de 11 ans uniquement",
+            "Vaccins expérimentaux en phase d'essais cliniques",
+          ],
+          reponse:
+            "Vaccins du calendrier vaccinal pour les personnes âgées de 11 ans et plus, sauf certains vaccins vivants atténués",
+        },
+        {
+          question:
+            "Quelle loi a élargi les droits de prescription des infirmiers pour inclure les substituts nicotiniques ?",
+          propositions: [
+            "Loi HPST 2009",
+            "Loi n° 2016-41",
+            "Loi RIST 2023",
+            "Loi Santé 2015",
+          ],
+          reponse: "Loi n° 2016-41",
+        },
+        {
+          question:
+            "Quel est le rôle principal d'un protocole de coopération ?",
+          propositions: [
+            "Permettre aux infirmiers de prescrire tous les médicaments",
+            "Faciliter la délégation de tâches médicales aux infirmiers",
+            "Augmenter le nombre de patients pris en charge par un médecin",
+            "Automatiser la gestion des prescriptions infirmières",
+          ],
+          reponse: "Faciliter la délégation de tâches médicales aux infirmiers",
+        },
+        {
+          question:
+            "Quelles sont les mentions obligatoires sur une ordonnance rédigée par un infirmier en pratique avancée ?",
+          propositions: [
+            "Nom de l'infirmier, posologie, numéro RPPS, poids du patient si nécessaire",
+            "Nom de l'infirmier, qualification, mode de remboursement",
+            "Signature du médecin superviseur, numéro RPPS, âge du patient",
+            "Dénomination commerciale du médicament uniquement",
+          ],
+          reponse:
+            "Nom de l'infirmier, posologie, numéro RPPS, poids du patient si nécessaire",
+        },
+        {
+          question:
+            "Quelle est une caractéristique des substituts nicotiniques prescrits par les infirmiers ?",
+          propositions: [
+            "Ils ne sont jamais remboursés",
+            "Ils incluent les patchs, gommes, pastilles et sprays buccaux",
+            "Ils nécessitent une ordonnance hospitalière",
+            "Ils sont réservés aux patients âgés de plus de 18 ans",
+          ],
+          reponse:
+            "Ils incluent les patchs, gommes, pastilles et sprays buccaux",
+        },
+        {
+          question:
+            "Quel est le diplôme nécessaire pour exercer en tant qu'infirmier en pratique avancée ?",
+          propositions: [
+            "Un doctorat en soins infirmiers",
+            "Un master en pratique avancée délivré par une université accréditée",
+            "Une licence spécialisée en pharmacologie",
+            "Une certification de l'Ordre des infirmiers",
+          ],
+          reponse:
+            "Un master en pratique avancée délivré par une université accréditée",
+        },
+        {
+          question:
+            "Quels sont les champs de spécialisation possibles pour les infirmiers en pratique avancée ?",
+          propositions: [
+            "Médecine d'urgence, oncologie, psychiatrie, pathologies chroniques",
+            "Pédiatrie, dermatologie, gastro-entérologie",
+            "Pharmacologie, immunologie, biotechnologie",
+            "Chirurgie, soins intensifs, nutrition",
+          ],
+          reponse:
+            "Médecine d'urgence, oncologie, psychiatrie, pathologies chroniques",
+        },
+        {
+          question:
+            "Quels principes fondamentaux guident la prescription infirmière ?",
+          propositions: [
+            "Bonnes pratiques cliniques, pertinence des soins, sécurité du patient",
+            "Optimisation des coûts, simplification des traitements, rapidité d'exécution",
+            "Confidentialité absolue, traitement unique, réduction des consultations",
+            "Prise en charge exclusive par les médecins, délais de validation prolongés",
+          ],
+          reponse:
+            "Bonnes pratiques cliniques, pertinence des soins, sécurité du patient",
+        },
+        {
+          question:
+            "Quelle est une conséquence possible d'une élimination rénale insuffisante d'un médicament ?",
+          propositions: [
+            "Une efficacité thérapeutique accrue",
+            "Une accumulation du médicament et des effets indésirables",
+            "Une distribution plus rapide du médicament dans l'organisme",
+            "Une diminution de la posologie requise",
+          ],
+          reponse: "Une accumulation du médicament et des effets indésirables",
+        },
+        {
+          question:
+            "Quel paramètre influence directement la distribution d'un médicament dans l'organisme ?",
+          propositions: [
+            "Le type de transporteurs intestinaux",
+            "Le poids corporel du patient",
+            "La voie d'administration uniquement",
+            "Le pH gastrique du patient",
+          ],
+          reponse: "Le poids corporel du patient",
+        },
+        // Exercice infirmier, pratique avancée
         {
           question:
             "Quelle est l'unité de mesure utilisée pour la dose de radiothérapie ?",
