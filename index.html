@@ -3361,7 +3361,10 @@
         quizEndContainer.style.display = "none";
         restartButton.style.display = "inline-block";
         scoreDisplay.style.display = "inline-block";
-        selectedQuestions = [...questionsArray];
+
+        // Mélanger les questions
+        selectedQuestions = [...questionsArray].sort(() => Math.random() - 0.5);
+
         currentQuestionIndex = 0;
         correctAnswers = 0;
         wrongAnswers = 0;
@@ -3495,10 +3498,17 @@
           parseInt(document.getElementById("total-questions").value) ||
           selected.length;
 
+        // Mélanger et concaténer les questions par catégorie
         selected.forEach((category) => {
-          combinedQuestions = combinedQuestions.concat(questions[category]);
+          const shuffledCategoryQuestions = [...questions[category]].sort(
+            () => Math.random() - 0.5
+          );
+          combinedQuestions = combinedQuestions.concat(
+            shuffledCategoryQuestions
+          );
         });
 
+        // Mélanger toutes les questions combinées et limiter au total requis
         const shuffled = combinedQuestions
           .sort(() => 0.5 - Math.random())
           .slice(0, totalQuestions);
