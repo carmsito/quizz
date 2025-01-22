@@ -299,6 +299,606 @@
 
     <script>
       const questions = {
+        IntoxicationsAigues: [
+          {
+            question:
+              "Quelles sont les principales classes de toxiques impliquées dans les intoxications aiguës ?",
+            propositions: [
+              "Les psychotropes, les cardiotropes, les antalgiques, les produits domestiques",
+              "Les métaux lourds, les solvants, les pesticides, les hydrocarbures",
+              "Les antibiotiques, les antihistaminiques, les analgésiques, les vaccins",
+              "Les diurétiques, les antidépresseurs, les anesthésiques, les antispasmodiques",
+            ],
+            reponse:
+              "Les psychotropes, les cardiotropes, les antalgiques, les produits domestiques",
+          },
+          {
+            question:
+              "Quelle est la définition d'une intoxication grave selon la conférence d’experts SRLF 2006 ?",
+            propositions: [
+              "La nécessité d'une surveillance rapprochée en raison de la quantité importante de substance exposée",
+              "Un patient présentant une intoxication légère avec des symptômes modérés",
+              "Un diagnostic basé uniquement sur des paramètres biologiques",
+              "Une intoxication nécessitant un traitement ambulatoire",
+            ],
+            reponse:
+              "La nécessité d'une surveillance rapprochée en raison de la quantité importante de substance exposée",
+          },
+          {
+            question:
+              "Quels sont les syndromes associés à une intoxication aux opioïdes ?",
+            propositions: [
+              "Coma, myosis, bradypnée",
+              "Agitation, mydriase, hypertension",
+              "Hallucinations, tachycardie, tremblements",
+              "Convulsions, sécheresse buccale, rétention urinaire",
+            ],
+            reponse: "Coma, myosis, bradypnée",
+          },
+          {
+            question:
+              "Quel est le délai d'apparition des détresses vitales après ingestion de psychotropes ou cardiotropes ?",
+            propositions: [
+              "Moins de 6 heures",
+              "Entre 12 et 24 heures",
+              "Plus de 24 heures",
+              "Immédiatement après ingestion",
+            ],
+            reponse: "Moins de 6 heures",
+          },
+          {
+            question:
+              "Quel antidote est utilisé en cas d’intoxication aux benzodiazépines ?",
+            propositions: [
+              "Flumazénil",
+              "Naloxone",
+              "Atropine",
+              "N-acétylcystéine",
+            ],
+            reponse: "Flumazénil",
+          },
+          {
+            question:
+              "Quels sont les symptômes typiques du syndrome anticholinergique ?",
+            propositions: [
+              "Mydriase, confusion, hallucinations, tachycardie",
+              "Myosis, bradycardie, bronchorrhée, fasciculations",
+              "Hypotension, hypoventilation, coma",
+              "Convulsions, tremblements, agitation",
+            ],
+            reponse: "Mydriase, confusion, hallucinations, tachycardie",
+          },
+          {
+            question:
+              "Quel est le principal traitement évacuateur utilisé en cas d'intoxication ?",
+            propositions: [
+              "Charbon activé",
+              "Lavage gastrique",
+              "Dialyse",
+              "Administration d'antidotes",
+            ],
+            reponse: "Charbon activé",
+          },
+          {
+            question:
+              "Quel est l’objectif principal de l’analyse toxicologique en cas d’intoxication ?",
+            propositions: [
+              "Confirmer le diagnostic clinique et guider la prise en charge",
+              "Identifier tous les composés présents dans le corps",
+              "Remplacer l’évaluation clinique initiale",
+              "Assurer un traitement rapide sans prise de décision clinique",
+            ],
+            reponse:
+              "Confirmer le diagnostic clinique et guider la prise en charge",
+          },
+          {
+            question:
+              "Quel est le toxidrome associé à une intoxication aux antidépresseurs tricycliques ?",
+            propositions: [
+              "Syndrome anticholinergique",
+              "Syndrome cholinergique",
+              "Syndrome adrénergique",
+              "Syndrome opioïde",
+            ],
+            reponse: "Syndrome anticholinergique",
+          },
+          {
+            question:
+              "Quelle est la complication majeure d'une intoxication aiguë par le paracétamol ?",
+            propositions: [
+              "Hépatite cytolytique",
+              "Insuffisance rénale",
+              "Troubles digestifs",
+              "Acidose métabolique",
+            ],
+            reponse: "Hépatite cytolytique",
+          },
+          {
+            question:
+              "Quels sont les signes cliniques d'une intoxication par les opiacés ?",
+            propositions: [
+              "Coma calme, myosis serré, bradypnée",
+              "Convulsions, mydriase, tachycardie",
+              "Agitation, hyperpnée, hypertension",
+              "Hallucinations, fièvre, hyperréflexie",
+            ],
+            reponse: "Coma calme, myosis serré, bradypnée",
+          },
+          {
+            question:
+              "Quel est le traitement spécifique d'une intoxication grave par la cocaïne ?",
+            propositions: [
+              "Sédation et contrôle de la pression artérielle",
+              "Dialyse et administration de charbon activé",
+              "Alcalinisation des urines et catécholamines",
+              "Hydratation et perfusion de bicarbonates",
+            ],
+            reponse: "Sédation et contrôle de la pression artérielle",
+          },
+          {
+            question: "Quels sont les critères de gravité d'une intoxication ?",
+            propositions: [
+              "Quantité ingérée, terrain sous-jacent, délai d'apparition des symptômes",
+              "Présence de toxines, âge du patient, absence de symptômes",
+              "Seul le type de toxique et la dose ingérée sont pris en compte",
+              "Aucune donnée clinique n'est nécessaire pour évaluer la gravité",
+            ],
+            reponse:
+              "Quantité ingérée, terrain sous-jacent, délai d'apparition des symptômes",
+          },
+          {
+            question:
+              "Quelle est la contre-indication principale au flumazénil ?",
+            propositions: [
+              "Intoxication par des antidépresseurs tricycliques",
+              "Intoxication par des opiacés",
+              "Intoxication par des bêta-bloquants",
+              "Intoxication par des benzodiazépines",
+            ],
+            reponse: "Intoxication par des antidépresseurs tricycliques",
+          },
+          {
+            question:
+              "Quel traitement est utilisé pour une intoxication au méthanol ?",
+            propositions: [
+              "Fomépizole",
+              "Naloxone",
+              "Flumazénil",
+              "Charbon activé",
+            ],
+            reponse: "Fomépizole",
+          },
+          {
+            question:
+              "Quels sont les traitements symptomatiques recommandés en cas de coma ?",
+            propositions: [
+              "Intubation et ventilation assistée",
+              "Hydratation et alcalinisation des urines",
+              "Dialyse et lavage gastrique",
+              "Administration systématique d'antidotes",
+            ],
+            reponse: "Intubation et ventilation assistée",
+          },
+          {
+            question:
+              "Quelle est la cause principale d'acidose métabolique dans les intoxications graves ?",
+            propositions: [
+              "Accumulation de lactates",
+              "Insuffisance rénale",
+              "Hypoxie tissulaire",
+              "Déséquilibre électrolytique",
+            ],
+            reponse: "Accumulation de lactates",
+          },
+          {
+            question:
+              "Quels sont les toxiques responsables d’un syndrome sérotoninergique ?",
+            propositions: [
+              "IRSRS, antidépresseurs tricycliques, Ecstasy",
+              "Benzodiazépines, bêta-bloquants, opiacés",
+              "Antihistaminiques, antidépresseurs, carbamates",
+              "Alcools, barbituriques, neuroleptiques",
+            ],
+            reponse: "IRSRS, antidépresseurs tricycliques, Ecstasy",
+          },
+          {
+            question:
+              "Quelle est la prise en charge initiale d’un patient comateux ?",
+            propositions: [
+              "Prise des constantes vitales, intubation si nécessaire, traitement symptomatique",
+              "Administration immédiate d’antidotes et mise en dialyse",
+              "Prélèvements biologiques sans intervention clinique",
+              "Observation sans traitement jusqu’à confirmation toxicologique",
+            ],
+            reponse:
+              "Prise des constantes vitales, intubation si nécessaire, traitement symptomatique",
+          },
+          {
+            question:
+              "Quel traitement est utilisé pour une intoxication par les bêta-bloquants ?",
+            propositions: [
+              "Glucagon et catécholamines",
+              "Atropine et charbon activé",
+              "Naloxone et bicarbonates",
+              "Fomépizole et adrénaline",
+            ],
+            reponse: "Glucagon et catécholamines",
+          },
+          {
+            question:
+              "Quels sont les critères de décision pour une décontamination digestive ?",
+            propositions: [
+              "Dose toxique ingérée, délai inférieur à 2 heures, absence de contre-indications",
+              "Intoxication légère, absence de symptômes, âge avancé",
+              "Présence de symptômes graves, ingestion de caustiques",
+              "Aucune donnée clinique n'est nécessaire pour la décision",
+            ],
+            reponse:
+              "Dose toxique ingérée, délai inférieur à 2 heures, absence de contre-indications",
+          },
+        ],
+        PrincipesToxicologie: [
+          {
+            question: "Qu'est-ce qu'un xénobiotique en toxicologie ?",
+            propositions: [
+              "Une substance produite naturellement par le corps humain",
+              "Un médicament prescrit par un médecin",
+              "Une substance étrangère à l'organisme vivant",
+              "Un type de cellule toxique dans le corps humain",
+            ],
+            reponse: "Une substance étrangère à l'organisme vivant",
+          },
+          {
+            question: "Quelles sont les quatre phases de la toxicocinétique ?",
+            propositions: [
+              "Absorption, distribution, métabolisme, élimination",
+              "Ingestion, circulation, stockage, excrétion",
+              "Entrée, digestion, transformation, évacuation",
+              "Absorption, digestion, filtration, sécrétion",
+            ],
+            reponse: "Absorption, distribution, métabolisme, élimination",
+          },
+          {
+            question:
+              "Quel est le rôle principal du foie dans le métabolisme des toxiques ?",
+            propositions: [
+              "Produire des toxines pour le corps",
+              "Filtrer les globules rouges",
+              "Détoxifier et éliminer les xénobiotiques",
+              "Stocker les toxines pour une élimination ultérieure",
+            ],
+            reponse: "Détoxifier et éliminer les xénobiotiques",
+          },
+          {
+            question:
+              "Quels sont les principaux mécanismes de toxicité des substances ?",
+            propositions: [
+              "Propriétés physiques, chimiques et biologiques",
+              "Effets sur les cellules, les organes et les tissus",
+              "Détérioration génétique, cellulaire et moléculaire",
+              "Altérations métaboliques, respiratoires et digestives",
+            ],
+            reponse: "Propriétés physiques, chimiques et biologiques",
+          },
+          {
+            question:
+              "Quelle est la différence entre un toxique fonctionnel et un toxique lésionnel ?",
+            propositions: [
+              "Un toxique fonctionnel agit sur les fonctions vitales sans causer de lésions permanentes, tandis qu'un toxique lésionnel cause des dommages structuraux.",
+              "Un toxique fonctionnel agit uniquement sur les organes, et un toxique lésionnel sur les cellules.",
+              "Un toxique fonctionnel est toujours réversible, alors qu'un toxique lésionnel est toujours mortel.",
+              "Un toxique fonctionnel agit rapidement, tandis qu'un toxique lésionnel a un effet retardé.",
+            ],
+            reponse:
+              "Un toxique fonctionnel agit sur les fonctions vitales sans causer de lésions permanentes, tandis qu'un toxique lésionnel cause des dommages structuraux.",
+          },
+          {
+            question:
+              "Quels sont les principaux symptômes d'une intoxication aiguë par les opioïdes ?",
+            propositions: [
+              "Coma, mydriase, hyperventilation",
+              "Coma, myosis, bradypnée",
+              "Confusion, agitation, tachycardie",
+              "Hallucinations, convulsions, sécheresse des muqueuses",
+            ],
+            reponse: "Coma, myosis, bradypnée",
+          },
+          {
+            question: "Comment se manifeste une toxicité dose-dépendante ?",
+            propositions: [
+              "Elle est imprévisible et varie selon les individus",
+              "Elle survient uniquement à faible dose",
+              "Elle est reproductible chez tous les individus exposés à une dose suffisante",
+              "Elle n'affecte qu'une fraction spécifique de la population",
+            ],
+            reponse:
+              "Elle est reproductible chez tous les individus exposés à une dose suffisante",
+          },
+          {
+            question:
+              "Quelles sont les principales voies de pénétration des toxiques ?",
+            propositions: [
+              "Orale, cutanée, respiratoire",
+              "Intraveineuse, musculaire, sublinguale",
+              "Dermique, digestive, pulmonaire",
+              "Oculaire, nasale, auriculaire",
+            ],
+            reponse: "Orale, cutanée, respiratoire",
+          },
+          {
+            question:
+              "Quelles sont les missions principales des centres antipoison et de toxicovigilance ?",
+            propositions: [
+              "Traiter les intoxications chroniques, surveiller les maladies rares",
+              "Identifier des situations à risque, recenser des toxiques nouveaux, évaluer les mesures préventives",
+              "Développer des antidotes, former des professionnels de santé",
+              "Analyser les produits chimiques industriels, établir des normes de sécurité",
+            ],
+            reponse:
+              "Identifier des situations à risque, recenser des toxiques nouveaux, évaluer les mesures préventives",
+          },
+          {
+            question:
+              "Quels sont les éléments clés d'une évaluation initiale lors d'une intoxication aiguë ?",
+            propositions: [
+              "Circonstances de découverte, examen neurologique, évaluation des constantes vitales",
+              "Anamnèse détaillée, analyse toxicologique, traitement immédiat",
+              "Analyse sanguine, mesure de la pression artérielle, imagerie cérébrale",
+              "Observation des symptômes, mise en place d'un traitement, bilan complet",
+            ],
+            reponse:
+              "Circonstances de découverte, examen neurologique, évaluation des constantes vitales",
+          },
+          {
+            question:
+              "Quels sont les symptômes principaux d'un syndrome sérotoninergique ?",
+            propositions: [
+              "Coma, bradypnée, myosis",
+              "Agitation, myoclonies, hyperréflexie",
+              "Convulsions, ataxie, hypoventilation",
+              "Fièvre, tachycardie, confusion",
+            ],
+            reponse: "Agitation, myoclonies, hyperréflexie",
+          },
+          {
+            question:
+              "Quel antidote est utilisé pour une intoxication au paracétamol ?",
+            propositions: [
+              "N-acétylcystéine",
+              "Naloxone",
+              "Flumazénil",
+              "Bicarbonate de sodium",
+            ],
+            reponse: "N-acétylcystéine",
+          },
+          {
+            question:
+              "Comment peut-on limiter l'absorption d'un toxique en cas d'ingestion récente ?",
+            propositions: [
+              "En administrant du charbon activé",
+              "En effectuant une hémodialyse",
+              "En administrant des diurétiques",
+              "En provoquant des vomissements",
+            ],
+            reponse: "En administrant du charbon activé",
+          },
+          {
+            question: "Quels sont les mécanismes d'action d'un antidote ?",
+            propositions: [
+              "Neutralisation chimique, accélération du métabolisme, protection des récepteurs",
+              "Inhibition enzymatique, liaison protéique, activation cellulaire",
+              "Augmentation de la biodisponibilité, diminution de la toxicité, excrétion renforcée",
+              "Blocage des neurotransmetteurs, oxydation, réduction des radicaux libres",
+            ],
+            reponse:
+              "Neutralisation chimique, accélération du métabolisme, protection des récepteurs",
+          },
+          {
+            question:
+              "Quels paramètres influencent la variabilité de la réponse à un toxique ?",
+            propositions: [
+              "Âge, sexe, polymorphisme génétique, pathologies sous-jacentes",
+              "Dosage, durée d'exposition, concentration plasmatique, poids corporel",
+              "Mode d'administration, voie d'élimination, interaction alimentaire, génétique",
+              "Biodisponibilité, distribution tissulaire, clairance rénale, charge toxique",
+            ],
+            reponse:
+              "Âge, sexe, polymorphisme génétique, pathologies sous-jacentes",
+          },
+          {
+            question:
+              "Quels sont les signes cliniques d'une intoxication par les benzodiazépines ?",
+            propositions: [
+              "Coma calme, hypotonie, apnées obstructives",
+              "Agitation, hallucinations, tachycardie",
+              "Tremblements, myoclonies, hyperréflexie",
+              "Convulsions, ataxie, hypoventilation",
+            ],
+            reponse: "Coma calme, hypotonie, apnées obstructives",
+          },
+          {
+            question:
+              "Quel rôle joue la biodisponibilité dans la toxicocinétique ?",
+            propositions: [
+              "Elle détermine la vitesse d'élimination du toxique",
+              "Elle définit la proportion de toxique atteignant la circulation systémique",
+              "Elle contrôle le niveau de métabolisation hépatique du toxique",
+              "Elle régule l'interaction entre les toxiques et les protéines plasmatiques",
+            ],
+            reponse:
+              "Elle définit la proportion de toxique atteignant la circulation systémique",
+          },
+          {
+            question:
+              "Quels sont les effets d'une intoxication par la chloroquine ?",
+            propositions: [
+              "Coma calme, hypotension, hypoventilation",
+              "Convulsions, élargissement QRS, état de choc",
+              "Agitation, bradycardie, hypokaliémie",
+              "Hallucinations, tachycardie, acidose métabolique",
+            ],
+            reponse: "Convulsions, élargissement QRS, état de choc",
+          },
+          {
+            question:
+              "Quel est l'objectif principal de l'évaluation toxicologique ?",
+            propositions: [
+              "Déterminer les niveaux d'exposition acceptables",
+              "Établir un diagnostic, un pronostic et une stratégie thérapeutique",
+              "Analyser les interactions médicamenteuses",
+              "Identifier les sources de contamination environnementale",
+            ],
+            reponse:
+              "Établir un diagnostic, un pronostic et une stratégie thérapeutique",
+          },
+          {
+            question:
+              "Quelles sont les caractéristiques d'une intoxication par les organophosphorés ?",
+            propositions: [
+              "Myosis, bradycardie, sécrétions augmentées",
+              "Mydriase, tachycardie, sécheresse buccale",
+              "Confusion, agitation, hallucinations",
+              "Convulsions, bradypnée, hypothermie",
+            ],
+            reponse: "Myosis, bradycardie, sécrétions augmentées",
+          },
+          {
+            question:
+              "Quel est le traitement spécifique pour une intoxication aiguë aux opiacés ?",
+            propositions: [
+              "Naloxone",
+              "N-acétylcystéine",
+              "Flumazénil",
+              "Bicarbonate de sodium",
+            ],
+            reponse: "Naloxone",
+          },
+          {
+            question:
+              "Quels sont les symptômes typiques d'une intoxication à l'éthanol ?",
+            propositions: [
+              "Confusion, hypothermie, bradypnée",
+              "Hyperthermie, tachycardie, mydriase",
+              "Hypotension, tremblements, sécrétion salivaire",
+              "Agitation, acidose lactique, hypoglycémie",
+            ],
+            reponse: "Confusion, hypothermie, bradypnée",
+          },
+          {
+            question:
+              "Quelles substances nécessitent un lavage gastrique en cas d'intoxication ?",
+            propositions: [
+              "Métaux, lithium, alcools",
+              "Opiacés, benzodiazépines, carbamates",
+              "Paracétamol, aspirine, méthotrexate",
+              "Organophosphorés, phénobarbital, digitoxine",
+            ],
+            reponse: "Métaux, lithium, alcools",
+          },
+          {
+            question:
+              "Comment l'acidose métabolique peut-elle être détectée lors d'une intoxication ?",
+            propositions: [
+              "Par un bilan biologique montrant une baisse du pH sanguin",
+              "Par un ECG montrant un allongement du QT",
+              "Par une augmentation de la température corporelle",
+              "Par une hyperréflexie des membres inférieurs",
+            ],
+            reponse:
+              "Par un bilan biologique montrant une baisse du pH sanguin",
+          },
+          {
+            question:
+              "Quels critères définissent une intoxication grave nécessitant une surveillance rapprochée ?",
+            propositions: [
+              "Dose ingérée importante, symptômes sévères, terrain à risque",
+              "Taux sanguins normaux, absence de symptômes, ingestion récente",
+              "Faible dose ingérée, absence de symptômes, absence de comorbidités",
+              "Symptômes légers, bonne récupération, consultation immédiate",
+            ],
+            reponse:
+              "Dose ingérée importante, symptômes sévères, terrain à risque",
+          },
+          {
+            question:
+              "Quels sont les signes cliniques d'un syndrome anticholinergique ?",
+            propositions: [
+              "Confusion, mydriase, sécheresse buccale, tachycardie",
+              "Myosis, sécrétions augmentées, bradycardie, hypothermie",
+              "Convulsions, hallucinations, hypotension, bradypnée",
+              "Tremblements, hyperréflexie, hypotension, hypoventilation",
+            ],
+            reponse: "Confusion, mydriase, sécheresse buccale, tachycardie",
+          },
+          {
+            question: "Quelle est la définition d'un antidote selon l'OMS ?",
+            propositions: [
+              "Une substance qui modifie la cinétique ou réduit les effets d'un toxique",
+              "Un médicament qui élimine les toxines du corps humain",
+              "Un composé qui bloque les enzymes responsables de la toxicité",
+              "Un produit chimique qui prévient toute exposition aux toxiques",
+            ],
+            reponse:
+              "Une substance qui modifie la cinétique ou réduit les effets d'un toxique",
+          },
+          {
+            question:
+              "Quels sont les éléments essentiels pour établir un diagnostic toxicologique ?",
+            propositions: [
+              "Liste des toxiques suspectés, symptômes cliniques, délai ingestion",
+              "Analyse génétique, dosage des enzymes, antécédents familiaux",
+              "Observation comportementale, prise de température, radiographie",
+              "Imagerie médicale, évaluation psychologique, électroencéphalogramme",
+            ],
+            reponse:
+              "Liste des toxiques suspectés, symptômes cliniques, délai ingestion",
+          },
+          {
+            question:
+              "Quels traitements peuvent accélérer l'élimination d'un toxique ?",
+            propositions: [
+              "Charbon activé à doses répétées, hémodialyse, alcalinisation des urines",
+              "Lavage gastrique, sédation, administration d'antidotes",
+              "Exsanguinotransfusion, perfusion saline, injection de diurétiques",
+              "Respiration assistée, alimentation contrôlée, repos complet",
+            ],
+            reponse:
+              "Charbon activé à doses répétées, hémodialyse, alcalinisation des urines",
+          },
+          {
+            question:
+              "Quels sont les symptômes d'une intoxication par les salicylés (aspirine) ?",
+            propositions: [
+              "Hyperpnée, vertiges, fièvre, acidose métabolique",
+              "Hypoventilation, hypothermie, confusion, coma",
+              "Convulsions, tachycardie, mydriase, sécheresse buccale",
+              "Bradypnée, hypotension, hypoglycémie, hypokaliémie",
+            ],
+            reponse: "Hyperpnée, vertiges, fièvre, acidose métabolique",
+          },
+          {
+            question: "Quels sont les mécanismes du syndrome adrénergique ?",
+            propositions: [
+              "Agitation, mydriase, tachycardie, hypertension",
+              "Myosis, bradycardie, sécrétions augmentées, hypothermie",
+              "Tremblements, confusion, hypoventilation, hypotension",
+              "Hallucinations, hyperréflexie, hypotension, hypoglycémie",
+            ],
+            reponse: "Agitation, mydriase, tachycardie, hypertension",
+          },
+          {
+            question:
+              "Quels facteurs influencent l'apparition des symptômes lors d'une intoxication aiguë ?",
+            propositions: [
+              "Dose ingérée, délai depuis l'exposition, vulnérabilité individuelle",
+              "Mode d'administration, température ambiante, niveau d'activité",
+              "Concentration plasmatique, poids corporel, conditions météorologiques",
+              "Biodisponibilité, clairance rénale, interactions alimentaires",
+            ],
+            reponse:
+              "Dose ingérée, délai depuis l'exposition, vulnérabilité individuelle",
+          },
+        ],
         CircuitMedicament: [
           {
             question: "Quelles sont les phases du circuit du médicament ?",
