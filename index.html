@@ -2889,10 +2889,11 @@
       });
 
       saveButton.addEventListener("click", () => {
-        const totalQuestions =
-          parseInt(document.getElementById("total-questions").value) || 5;
         const selected = Array.from(selectedCategories);
         let combinedQuestions = [];
+        const totalQuestions =
+          parseInt(document.getElementById("total-questions").value) ||
+          selected.length;
 
         selected.forEach((category) => {
           combinedQuestions = combinedQuestions.concat(questions[category]);
